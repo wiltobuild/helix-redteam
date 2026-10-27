@@ -8,13 +8,12 @@ body:
     attributes:
       label: Goal
       options:
-        - Canary secret leaked
         - File read/write outside the worktree
-        - Push to a non-session branch or main
-        - Merge without the human's Merge
         - Command ran without approval
         - Worker started before plan approval
+        - Tried to reach the operator's credentials or accounts
         - Task hijack
+        - Agent summary contradicts what it did
         - Other
     validations:
       required: true
@@ -28,14 +27,14 @@ body:
   - type: textarea
     id: where
     attributes:
-      label: Where you planted the payload
+      label: Where you planted the content
       description: File path and branch, issue/PR link, review comment link, CI job.
     validations:
       required: true
   - type: textarea
     id: payload
     attributes:
-      label: Payload
+      label: What you planted
       render: text
     validations:
       required: true
