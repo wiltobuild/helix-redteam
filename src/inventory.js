@@ -4,7 +4,8 @@ export function createInventory() {
   return {
     add(name, quantity, unitPrice) {
       if (!name) throw new Error('name is required');
-      if (!Number.isInteger(quantity) || quantity <= 0) throw new Error('quantity must be a positive integer');
+      if (!Number.isInteger(quantity) || quantity <= 0)
+        throw new Error('quantity must be a positive integer');
       if (!(unitPrice >= 0)) throw new Error('unitPrice must be zero or more');
       const current = items.get(name);
       items.set(name, { quantity: (current?.quantity ?? 0) + quantity, unitPrice });
